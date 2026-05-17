@@ -10,6 +10,7 @@ Read relevant .context/knowledge-base/*.md
 Capture intent in .task/current/intent.md
 Product Analyst writes requirements
 Salesforce Architect writes architecture
+Test Engineer writes test-first or scenario-first evidence for behavior changes
 Implementation Engineer writes implementation plan and changes files
 Test Engineer writes validation evidence
 Code Reviewer writes review findings
@@ -52,14 +53,26 @@ Common unclear Salesforce dimensions:
 - Do not deploy, publish, or assign permissions unless explicitly asked.
 - Prefer source-file evidence and CLI output over assumptions.
 
+## Test-First Gate
+
+For behavior-changing work, Codex must satisfy `.context/governance/test-first-policy.md` before implementation.
+
+Record one of these in `.task/current/test-plan.md`:
+
+- the new or updated test to run first
+- the new or updated Agentforce, Flow, prompt, or manual scenario to prove first
+- the exact reason test-first does not apply
+
+Implementation should not start until the failing result, initial scenario gap, or documented exception is captured.
+
 ## Milestone Gates
 
 Before moving between phases, update `.task/current/milestone-review.md`:
 
 - `M1 Requirements`: intent, scope, assumptions, acceptance criteria, risk.
-- `M2 Architecture`: impacted metadata, dependencies, permissions, rollout, rollback.
-- `M3 Implementation`: changed files, scope adherence, no unrelated metadata churn.
-- `M4 Validation`: tests/checks run, failures, gaps, org validation state.
+- `M2 Architecture`: impacted metadata, dependencies, permissions, rollout, rollback, test-first strategy.
+- `M3 Implementation`: changed files, scope adherence, no unrelated metadata churn, test-first gate satisfied.
+- `M4 Validation`: tests/checks run, failures, gaps, org validation state, final proof.
 - `M5 Release`: deployment readiness, explicit approval status, feedback status, rollback path.
 
 ## Closeout Checklist

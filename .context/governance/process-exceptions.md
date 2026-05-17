@@ -7,6 +7,7 @@ Some tasks cannot satisfy every process requirement. Exceptions are allowed only
 ## Allowed Exceptions
 
 - Docs-only or governance setup work may happen on `master` only when the user explicitly requested the setup and the exception is recorded.
+- Test-first may be skipped for docs-only, process-only, or non-behavioral changes when the exception or non-applicability is recorded.
 - Validation may be limited when no Salesforce org alias or auth is available.
 - Apex tests may be skipped only when no Apex behavior changed or when org validation is unavailable and documented.
 - Release checklist may be omitted only when release, deploy, publish, or merge is out of scope.
@@ -19,6 +20,7 @@ Some tasks cannot satisfy every process requirement. Exceptions are allowed only
 - publishing or activating an Agentforce agent without explicit user approval
 - committing ignored local auth/session artifacts
 - silently skipping review or governance checks
+- silently skipping test-first evidence for behavior-changing work
 - merging to `master` without explicit user approval
 
 ## Exception Format

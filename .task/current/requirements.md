@@ -2,22 +2,22 @@
 
 ## Goal
 
-Make the Codex-only Agentforce development process more foolproof and easier to revisit.
+Make TDD/test-first an enforceable project process instead of soft guidance.
 
 ## Acceptance Criteria
 
-- Add missing process safeguards where gaps exist.
-- Add explicit compliance checklist and exception handling.
-- Update README with process details for future reference.
-- Document future-scope items that are not implemented today, including vector DB and automated RAG.
-- Validate formatting.
+- Add a dedicated test-first policy.
+- Require test-first or scenario-first evidence before behavior-changing implementation.
+- Add an explicit exception path for docs-only, process-only, or untestable changes.
+- Update role, governance, milestone, compliance, and README guidance.
+- Validate formatting for touched process files.
 - Commit completed changes locally.
 
 ## Scope
 
 - Process and documentation files only.
 - No Salesforce runtime metadata changes.
-- No deployment, publish, or permission assignment.
+- No deployment, publish, permission assignment, or org state change.
 
 ## Risk
 

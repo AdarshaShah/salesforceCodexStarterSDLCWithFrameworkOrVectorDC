@@ -1,20 +1,15 @@
 # Feedback
 
-Outcome status: `pending-user-feedback`
+## User Feedback
 
-User feedback summary:
+User identified TDD as important and asked to add it to the process.
 
-- User asked to audit and harden the process, update README, and document non-foolproof areas as future scope.
+## Outcome
 
-Memory update needed:
+- Added a dedicated test-first policy.
+- Wired test-first/scenario-first evidence into the operating contract, Test Engineer role, governance, milestone gates, compliance checklist, knowledge base, and README.
+- Focused Markdown formatting validation passed.
 
-- Yes. Future work should treat compliance checklist and process exceptions as required closeout artifacts.
+## Memory Update Decision
 
-Memory target:
-
-- `.context/MEMORY.md`
-- `.context/knowledge-base/future-scope.md`
-
-Follow-up actions:
-
-- Await user feedback after final summary.
+Update `.context/MEMORY.md` with the durable test-first policy entry point.

@@ -48,6 +48,7 @@ Core process files:
 - `.context/MEMORY.md`: durable file-backed memory.
 - `.context/knowledge-base/`: curated Salesforce and Agentforce knowledge base.
 - `.context/governance/`: governance, guardrails, branching, commit, compliance, and milestone rules.
+- `.context/governance/test-first-policy.md`: required test-first and scenario-first gate.
 - `.context/feedback/`: feedback capture and improvement loop.
 - `.task/current/`: active task evidence and phase state.
 
@@ -63,6 +64,7 @@ Create or confirm a task branch
 Capture intent and requirements
 Run Product Analyst role
 Run Salesforce Architect role
+Run Test Engineer role for test-first/scenario-first evidence
 Run Implementation Engineer role
 Run Test Engineer role
 Run Code Reviewer role
@@ -139,9 +141,9 @@ Key guardrails:
 Milestones are tracked in `.task/current/milestone-review.md`:
 
 - `M1 Requirements`: intent, scope, acceptance criteria, assumptions, risk, branch
-- `M2 Architecture`: impacted metadata, dependencies, permissions, deployment impact, rollback
-- `M3 Implementation`: scoped changes, branch confirmation, metadata consistency
-- `M4 Validation`: formatting, tests, deploy validation or documented gaps
+- `M2 Architecture`: impacted metadata, dependencies, permissions, deployment impact, rollback, test-first strategy
+- `M3 Implementation`: scoped changes, branch confirmation, metadata consistency, test-first gate satisfied
+- `M4 Validation`: formatting, tests, deploy validation or documented gaps, final proof
 - `M5 Release`: approval, target org, rollback, post-deploy verification, residual risk
 
 ### Compliance Checklist
@@ -154,6 +156,7 @@ Required checks include:
 - governance files read
 - branch policy followed
 - requirements and acceptance criteria captured
+- test-first evidence captured before behavior changes, or exception documented
 - milestone review updated
 - validation run or limitation documented
 - code review and governance review complete
@@ -174,6 +177,17 @@ Durable feedback and lessons are stored in:
 Only reusable, verified lessons should be promoted to durable memory. One-off feedback stays in task evidence unless the user says it should apply going forward.
 
 ### Validation Defaults
+
+For behavior-changing work, follow the red-green-prove loop before implementation:
+
+```text
+Write or update the narrowest test or scenario
+Run it first when technically possible
+Record the failing result, gap, or exception
+Implement the minimum scoped change
+Re-run the same proof
+Run broader validation when risk requires it
+```
 
 Use local formatting checks for documentation and metadata:
 

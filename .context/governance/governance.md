@@ -7,6 +7,7 @@ Codex is the execution manager. The user remains the owner of business intent, o
 ## Governance Principles
 
 - Requirements must be explicit before implementation.
+- Behavior-changing work must satisfy the test-first policy before implementation.
 - Salesforce metadata changes must be scoped and reviewable.
 - Meaningful requirement work must happen on a feature or requirement branch.
 - Agentforce behavior changes must account for Agent Script, tools, Apex, flows, prompt templates, and permissions.
@@ -49,6 +50,7 @@ Each meaningful task should leave evidence in `.task/current/`:
 - architecture
 - implementation plan
 - test plan and outcomes
+- test-first evidence or documented exception
 - code review
 - milestone/governance review
 - branch name

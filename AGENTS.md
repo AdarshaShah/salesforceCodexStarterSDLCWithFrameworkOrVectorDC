@@ -10,7 +10,7 @@ This repository is a Salesforce DX project for Agentforce development. Codex is 
 4. Treat `sfdx-project.json`, `force-app/main/default/aiAuthoringBundles`, Apex classes, flows, prompt templates, permission sets, and package manifests as deployment-sensitive assets.
 5. Do not modify auth state, org aliases, deployment targets, or scratch org config without stating the intended command and expected org impact first.
 6. Do not deploy, assign permissions, publish agents, or run destructive metadata operations unless the user explicitly asks.
-7. For Apex changes, prefer test-first or test-updated-first work. Run the narrowest relevant Apex test before broader validation.
+7. For behavior-changing work, satisfy the test-first gate in `.context/governance/test-first-policy.md` before implementation. Apex changes must use test-first or test-updated-first work when an authenticated org and relevant tests are available.
 8. For Agentforce authoring changes, keep Agent Script, tools, prompt templates, flows, Apex invocables, and permission metadata consistent.
 9. Preserve existing Salesforce naming conventions and metadata folder structure.
 10. Every completed file-change task must be committed to Git after validation and review. Do not leave completed changes unstaged or uncommitted.
@@ -55,10 +55,11 @@ Use these files first:
 5. `.context/knowledge-base/knowledge-update-policy.md`
 6. `.context/governance/git-commit-policy.md`
 7. `.context/governance/branching-policy.md`
-8. `.context/feedback/feedback-process.md`
-9. `.context/governance/compliance-checklist.md`
-10. `.context/governance/process-exceptions.md`
-11. `.context/knowledge-base/future-scope.md`
+8. `.context/governance/test-first-policy.md`
+9. `.context/feedback/feedback-process.md`
+10. `.context/governance/compliance-checklist.md`
+11. `.context/governance/process-exceptions.md`
+12. `.context/knowledge-base/future-scope.md`
 
 Update the knowledge base only with reusable guidance, stable project facts, or verified lessons. Keep task-specific evidence in `.task/current/` and completed task summaries in `.context/completed-tasks/`.
 
@@ -98,13 +99,14 @@ Small, low-risk edits may use a compressed version of the workflow, but Codex mu
 2. If confidence is low, inspect more project evidence or ask the user.
 3. Complete milestone review checkpoints before crossing from requirements to architecture, architecture to implementation, implementation to validation, validation to release, or release to deploy.
 4. Create or confirm the task branch before changing files for a meaningful requirement.
-5. Write or update tests before implementation when behavior changes.
-6. Run the narrowest relevant verification first, then broader validation when the change risk requires it.
-7. Self-review the exact diff before final response.
-8. Capture feedback status and memory-update decision before final closeout.
-9. Complete `.task/current/compliance-checklist.md` before committing.
-10. Commit every completed file-change task with a clear message after validation and review.
-11. Do not push, deploy, publish, or merge to `master` unless the user explicitly asks.
+5. Write or update tests or scenario evidence before implementation when behavior changes.
+6. Run the new or updated test/scenario before implementation when technically possible, and record the failing result or documented gap in `.task/current/test-plan.md`.
+7. Run the narrowest relevant verification after implementation, then broader validation when the change risk requires it.
+8. Self-review the exact diff before final response.
+9. Capture feedback status and memory-update decision before final closeout.
+10. Complete `.task/current/compliance-checklist.md` before committing.
+11. Commit every completed file-change task with a clear message after validation and review.
+12. Do not push, deploy, publish, or merge to `master` unless the user explicitly asks.
 
 ## Salesforce Validation Defaults
 
@@ -125,11 +127,12 @@ A task is done only when:
 
 1. Requirements and acceptance criteria are clear.
 2. Implementation is scoped to the approved Salesforce metadata.
-3. Tests or validation commands have been run, or the limitation is explicitly reported.
-4. A review pass has checked metadata consistency, permissions, and deployment risk.
-5. A governance review has checked guardrails, approval requirements, milestone status, and residual risk.
-6. Work was completed on an appropriate feature or requirement branch, unless the branch exception is documented.
-7. Feedback status and memory-update decision are recorded.
-8. The compliance checklist is complete, or every unchecked item has a documented exception.
-9. The completed file-change set is committed to Git.
-10. Release notes include deploy command, target org assumptions, rollback path, and residual risk.
+3. Test-first evidence exists for behavior changes, or a documented exception explains why it does not apply.
+4. Tests or validation commands have been run, or the limitation is explicitly reported.
+5. A review pass has checked metadata consistency, permissions, and deployment risk.
+6. A governance review has checked guardrails, approval requirements, milestone status, and residual risk.
+7. Work was completed on an appropriate feature or requirement branch, unless the branch exception is documented.
+8. Feedback status and memory-update decision are recorded.
+9. The compliance checklist is complete, or every unchecked item has a documented exception.
+10. The completed file-change set is committed to Git.
+11. Release notes include deploy command, target org assumptions, rollback path, and residual risk.

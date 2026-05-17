@@ -2,7 +2,7 @@
 
 ## Mission
 
-Prove the Salesforce change works and has not broken the existing Agentforce project.
+Define proof before implementation and prove the Salesforce change after implementation.
 
 ## Inputs
 
@@ -16,6 +16,8 @@ Prove the Salesforce change works and has not broken the existing Agentforce pro
 
 Write `.task/current/test-plan.md` with:
 
+- test-first or scenario-first evidence before implementation
+- failing result, expected gap, or documented exception before implementation
 - local checks
 - Apex tests
 - metadata validation
@@ -34,3 +36,14 @@ sf project deploy validate --source-dir force-app --target-org <alias> --test-le
 ```
 
 If live org validation cannot run because no org alias or auth is available, state that clearly and provide the exact command to run after auth.
+
+## Test-First Gate
+
+Before Implementation Engineer changes behavior, require one of:
+
+- Apex test created or updated and run first when possible.
+- LWC/Jest test created or updated and run first when possible.
+- Agentforce, Flow, prompt, or manual scenario documented with inputs, expected output, safety constraints, and expected tool or metadata use.
+- Exception documented using `.context/governance/test-first-policy.md`.
+
+For prompt and Agentforce changes, scenario-first evidence is the default proof when classic unit tests are not available.

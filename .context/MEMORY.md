@@ -9,6 +9,7 @@ This is the durable, Git-backed memory for the Salesforce Agentforce project. Ke
 - The repo uses file-backed context under `.context/`, not a vector database.
 - The project knowledge base is curated Markdown under `.context/knowledge-base/`, not automated RAG.
 - Governance and milestone-review rules live under `.context/governance/`.
+- Test-first policy lives under `.context/governance/test-first-policy.md`.
 - Git commit policy lives under `.context/governance/git-commit-policy.md`.
 - Branching policy lives under `.context/governance/branching-policy.md`.
 - Feedback process lives under `.context/feedback/`.
@@ -27,6 +28,7 @@ This is the durable, Git-backed memory for the Salesforce Agentforce project. Ke
 
 - Use `npm run prettier:verify` for local formatting checks.
 - Use targeted Apex tests for Apex behavior changes.
+- Use test-first or scenario-first evidence before implementation for behavior-changing work.
 - Use Salesforce deploy validation before live deploy when an org alias is available.
 - Do not deploy, publish, or assign permissions unless the user explicitly asks.
 
@@ -43,6 +45,7 @@ This is the durable, Git-backed memory for the Salesforce Agentforce project. Ke
 - `.context/governance/governance.md`
 - `.context/governance/guardrails.md`
 - `.context/governance/milestone-review.md`
+- `.context/governance/test-first-policy.md`
 - `.context/governance/git-commit-policy.md`
 - `.context/governance/branching-policy.md`
 - `.context/governance/compliance-checklist.md`

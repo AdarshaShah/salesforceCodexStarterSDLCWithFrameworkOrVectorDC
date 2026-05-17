@@ -24,11 +24,13 @@ Required before implementation:
 - permission impact is considered
 - deployment impact is considered
 - rollback approach is identified
+- test-first or scenario-first strategy is documented
 
 ## M3 Implementation
 
 Required before validation:
 
+- test-first gate is satisfied or exception is documented
 - changed files match approved scope
 - changes are on the approved branch
 - no unrelated metadata churn
@@ -40,6 +42,7 @@ Required before validation:
 Required before release planning:
 
 - local checks are run or limitations documented
+- initial test/scenario result and final test/scenario result are recorded when behavior changed
 - Apex tests are run when relevant or limitations documented
 - deploy validation is run when an org alias is available and release risk warrants it
 - failures and gaps are captured

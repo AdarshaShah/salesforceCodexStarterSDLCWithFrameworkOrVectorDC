@@ -11,6 +11,7 @@ Use this checklist before closing any meaningful file-changing task.
 - Intent and requirements captured
 - Acceptance criteria captured
 - Architecture or implementation plan captured
+- Test-first evidence captured for behavior changes, or exception documented
 - Milestone review updated
 - Changed files match approved scope
 - Validation run, or limitation documented

@@ -9,6 +9,7 @@
 - Intent and requirements captured: passed
 - Acceptance criteria captured: passed
 - Architecture or implementation plan captured: passed
+- Test-first evidence captured for behavior changes, or exception documented: passed-with-exception
 - Milestone review updated: passed
 - Changed files match approved scope: passed
 - Validation run, or limitation documented: passed
@@ -34,10 +35,10 @@ Status: `passed-with-documented-exceptions`
 
 Exception:
 
-Reason: Salesforce deploy validation is not required because this task changes process documentation only.
+Reason: test-first behavior proof and Salesforce deploy validation are not required because this task changes process documentation only.
 
 Risk: low
 
-User approval: user requested process hardening.
+User approval: user requested TDD/process hardening.
 
-Follow-up: commit locally.
+Follow-up: apply `.context/governance/test-first-policy.md` to the next behavior-changing requirement.

@@ -18,6 +18,14 @@ For Apex behavior changes, prefer targeted tests first:
 sf apex run test --target-org <alias> --tests <TestClassName> --wait 30 --result-format human
 ```
 
+For behavior-changing work, follow the test-first policy before implementation:
+
+1. Add or update the narrowest useful test or scenario.
+2. Run it before implementation when technically possible.
+3. Record the failing or gap result in `.task/current/test-plan.md`.
+4. Implement the scoped change.
+5. Re-run the same test or scenario and record the passing result.
+
 Use broader local tests when risk or dependency surface increases:
 
 ```powershell
