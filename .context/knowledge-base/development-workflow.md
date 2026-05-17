@@ -14,6 +14,7 @@ Implementation Engineer writes implementation plan and changes files
 Test Engineer writes validation evidence
 Code Reviewer writes review findings
 Governance Reviewer writes milestone and guardrail review
+Feedback Reviewer records task outcome and memory update decision
 Release Engineer writes release checklist
 Update .context when durable lessons were learned
 ```
@@ -28,7 +29,8 @@ Use the role files in this order unless the task is narrow enough to compress th
 4. `.agents/roles/test-engineer.md`
 5. `.agents/roles/code-reviewer.md`
 6. `.agents/roles/governance-reviewer.md`
-7. `.agents/roles/release-engineer.md`
+7. `.agents/roles/feedback-reviewer.md`
+8. `.agents/roles/release-engineer.md`
 
 ## Intent Handling
 
@@ -57,4 +59,4 @@ Before moving between phases, update `.task/current/milestone-review.md`:
 - `M2 Architecture`: impacted metadata, dependencies, permissions, rollout, rollback.
 - `M3 Implementation`: changed files, scope adherence, no unrelated metadata churn.
 - `M4 Validation`: tests/checks run, failures, gaps, org validation state.
-- `M5 Release`: deployment readiness, explicit approval status, rollback path.
+- `M5 Release`: deployment readiness, explicit approval status, feedback status, rollback path.

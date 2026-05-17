@@ -15,6 +15,7 @@ This repository is a Salesforce DX project for Agentforce development. Codex is 
 9. Preserve existing Salesforce naming conventions and metadata folder structure.
 10. Every completed file-change task must be committed to Git after validation and review. Do not leave completed changes unstaged or uncommitted.
 11. Use a feature or requirement branch for every meaningful requirement before changing files. Do not implement directly on `master` except for explicit repository setup or emergency repair approved by the user.
+12. Capture task feedback before final closeout and update memory only with reusable, verified lessons.
 
 ## File-Backed Context
 
@@ -25,15 +26,18 @@ Before planning:
 1. Read `.context/MEMORY.md`.
 2. Inspect relevant files under `.context/knowledge-base/` for Salesforce and Agentforce guidance that applies to the request.
 3. Inspect `.context/governance/governance.md`, `.context/governance/guardrails.md`, and `.context/governance/milestone-review.md` for governance and approval rules.
-4. Inspect relevant files under `.context/decisions/`, `.context/patterns/`, `.context/salesforce-org-notes/`, and `.context/completed-tasks/` only when they relate to the current request.
-5. If prior context is unclear or stale, state the uncertainty and verify from source files or Salesforce CLI output.
+4. Inspect `.context/feedback/improvement-log.md` when prior feedback may affect the current request.
+5. Inspect relevant files under `.context/decisions/`, `.context/patterns/`, `.context/salesforce-org-notes/`, and `.context/completed-tasks/` only when they relate to the current request.
+6. If prior context is unclear or stale, state the uncertainty and verify from source files or Salesforce CLI output.
 
 After meaningful work:
 
 1. Update `.task/current/` with task evidence.
 2. Add durable lessons to `.context/MEMORY.md` only when they should guide future work.
 3. Add or update `.context/knowledge-base/` entries when a reusable Salesforce or Agentforce practice is discovered.
-4. Add detailed notes under the relevant `.context/` subfolder when the detail is useful but too long for `MEMORY.md`.
+4. Capture task outcome and user feedback in `.task/current/feedback.md`.
+5. Add durable feedback trends to `.context/feedback/improvement-log.md`.
+6. Add detailed notes under the relevant `.context/` subfolder when the detail is useful but too long for `MEMORY.md`.
 
 Do not store secrets, access tokens, session IDs, private keys, or credentials in `.context/`.
 
@@ -50,6 +54,7 @@ Use these files first:
 5. `.context/knowledge-base/knowledge-update-policy.md`
 6. `.context/governance/git-commit-policy.md`
 7. `.context/governance/branching-policy.md`
+8. `.context/feedback/feedback-process.md`
 
 Update the knowledge base only with reusable guidance, stable project facts, or verified lessons. Keep task-specific evidence in `.task/current/` and completed task summaries in `.context/completed-tasks/`.
 
@@ -63,7 +68,8 @@ Use the role files in this order unless the task is clearly narrower:
 4. `.agents/roles/test-engineer.md`
 5. `.agents/roles/code-reviewer.md`
 6. `.agents/roles/governance-reviewer.md`
-7. `.agents/roles/release-engineer.md`
+7. `.agents/roles/feedback-reviewer.md`
+8. `.agents/roles/release-engineer.md`
 
 For each meaningful task, create or update:
 
@@ -75,6 +81,7 @@ For each meaningful task, create or update:
 .task/current/test-plan.md
 .task/current/review.md
 .task/current/milestone-review.md
+.task/current/feedback.md
 .task/current/release-checklist.md
 ```
 
@@ -89,8 +96,9 @@ Small, low-risk edits may use a compressed version of the workflow, but Codex mu
 5. Write or update tests before implementation when behavior changes.
 6. Run the narrowest relevant verification first, then broader validation when the change risk requires it.
 7. Self-review the exact diff before final response.
-8. Commit every completed file-change task with a clear message after validation and review.
-9. Do not push, deploy, publish, or merge to `master` unless the user explicitly asks.
+8. Capture feedback status and memory-update decision before final closeout.
+9. Commit every completed file-change task with a clear message after validation and review.
+10. Do not push, deploy, publish, or merge to `master` unless the user explicitly asks.
 
 ## Salesforce Validation Defaults
 
@@ -115,5 +123,6 @@ A task is done only when:
 4. A review pass has checked metadata consistency, permissions, and deployment risk.
 5. A governance review has checked guardrails, approval requirements, milestone status, and residual risk.
 6. Work was completed on an appropriate feature or requirement branch, unless the branch exception is documented.
-7. The completed file-change set is committed to Git.
-8. Release notes include deploy command, target org assumptions, rollback path, and residual risk.
+7. Feedback status and memory-update decision are recorded.
+8. The completed file-change set is committed to Git.
+9. Release notes include deploy command, target org assumptions, rollback path, and residual risk.

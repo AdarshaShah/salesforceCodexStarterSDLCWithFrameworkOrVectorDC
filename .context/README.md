@@ -11,6 +11,7 @@ This folder is the project memory system. It is intentionally Markdown-only and 
 - `salesforce-org-notes/`: org-specific notes that are safe to store.
 - `knowledge-base/`: curated Salesforce and Agentforce guidance for Codex.
 - `governance/`: governance, guardrails, approval, and milestone-review rules.
+- `feedback/`: feedback capture, improvement log, and memory-update process.
 - `retrieved-context.md`: optional scratch context assembled for the current task.
 
 ## Rules

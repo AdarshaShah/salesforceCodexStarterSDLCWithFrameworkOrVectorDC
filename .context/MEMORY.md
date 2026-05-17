@@ -11,6 +11,7 @@ This is the durable, Git-backed memory for the Salesforce Agentforce project. Ke
 - Governance and milestone-review rules live under `.context/governance/`.
 - Git commit policy lives under `.context/governance/git-commit-policy.md`.
 - Branching policy lives under `.context/governance/branching-policy.md`.
+- Feedback process lives under `.context/feedback/`.
 - Current task state lives under `.task/current/`.
 - Do not store secrets, tokens, private keys, or live session details in memory files.
 
@@ -44,6 +45,12 @@ This is the durable, Git-backed memory for the Salesforce Agentforce project. Ke
 - `.context/governance/milestone-review.md`
 - `.context/governance/git-commit-policy.md`
 - `.context/governance/branching-policy.md`
+
+## Feedback Entry Points
+
+- `.context/feedback/feedback-process.md`
+- `.context/feedback/user-feedback.md`
+- `.context/feedback/improvement-log.md`
 
 ## Known Setup Notes
 
