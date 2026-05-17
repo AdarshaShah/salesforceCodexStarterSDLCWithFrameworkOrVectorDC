@@ -8,6 +8,7 @@ Codex is the execution manager. The user remains the owner of business intent, o
 
 - Requirements must be explicit before implementation.
 - Salesforce metadata changes must be scoped and reviewable.
+- Meaningful requirement work must happen on a feature or requirement branch.
 - Agentforce behavior changes must account for Agent Script, tools, Apex, flows, prompt templates, and permissions.
 - Validation evidence must be captured before a task is marked done.
 - Completed file-change tasks must be committed to Git after validation and review.
@@ -50,5 +51,6 @@ Each meaningful task should leave evidence in `.task/current/`:
 - test plan and outcomes
 - code review
 - milestone/governance review
+- branch name
 - git commit hash for completed file-change tasks
 - release checklist when release is in scope

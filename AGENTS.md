@@ -14,6 +14,7 @@ This repository is a Salesforce DX project for Agentforce development. Codex is 
 8. For Agentforce authoring changes, keep Agent Script, tools, prompt templates, flows, Apex invocables, and permission metadata consistent.
 9. Preserve existing Salesforce naming conventions and metadata folder structure.
 10. Every completed file-change task must be committed to Git after validation and review. Do not leave completed changes unstaged or uncommitted.
+11. Use a feature or requirement branch for every meaningful requirement before changing files. Do not implement directly on `master` except for explicit repository setup or emergency repair approved by the user.
 
 ## File-Backed Context
 
@@ -48,6 +49,7 @@ Use these files first:
 4. `.context/knowledge-base/validation-and-release.md`
 5. `.context/knowledge-base/knowledge-update-policy.md`
 6. `.context/governance/git-commit-policy.md`
+7. `.context/governance/branching-policy.md`
 
 Update the knowledge base only with reusable guidance, stable project facts, or verified lessons. Keep task-specific evidence in `.task/current/` and completed task summaries in `.context/completed-tasks/`.
 
@@ -83,11 +85,12 @@ Small, low-risk edits may use a compressed version of the workflow, but Codex mu
 1. Plan before coding and state confidence as `HIGH`, `MEDIUM`, or `LOW`.
 2. If confidence is low, inspect more project evidence or ask the user.
 3. Complete milestone review checkpoints before crossing from requirements to architecture, architecture to implementation, implementation to validation, validation to release, or release to deploy.
-4. Write or update tests before implementation when behavior changes.
-5. Run the narrowest relevant verification first, then broader validation when the change risk requires it.
-6. Self-review the exact diff before final response.
-7. Commit every completed file-change task with a clear message after validation and review.
-8. Do not push, deploy, or publish unless the user explicitly asks.
+4. Create or confirm the task branch before changing files for a meaningful requirement.
+5. Write or update tests before implementation when behavior changes.
+6. Run the narrowest relevant verification first, then broader validation when the change risk requires it.
+7. Self-review the exact diff before final response.
+8. Commit every completed file-change task with a clear message after validation and review.
+9. Do not push, deploy, publish, or merge to `master` unless the user explicitly asks.
 
 ## Salesforce Validation Defaults
 
@@ -111,5 +114,6 @@ A task is done only when:
 3. Tests or validation commands have been run, or the limitation is explicitly reported.
 4. A review pass has checked metadata consistency, permissions, and deployment risk.
 5. A governance review has checked guardrails, approval requirements, milestone status, and residual risk.
-6. The completed file-change set is committed to Git.
-7. Release notes include deploy command, target org assumptions, rollback path, and residual risk.
+6. Work was completed on an appropriate feature or requirement branch, unless the branch exception is documented.
+7. The completed file-change set is committed to Git.
+8. Release notes include deploy command, target org assumptions, rollback path, and residual risk.

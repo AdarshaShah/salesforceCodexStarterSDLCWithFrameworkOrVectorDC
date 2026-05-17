@@ -8,3 +8,4 @@ Files:
 - `guardrails.md`: blocked, approval-required, and allowed actions.
 - `milestone-review.md`: phase gates and review checklist.
 - `git-commit-policy.md`: Git commit expectations for file-change tasks.
+- `branching-policy.md`: feature and requirement branch rules.

@@ -12,12 +12,14 @@ Required before architecture:
 - assumptions are explicit
 - risk level is assigned
 - approval needs are identified
+- branch name is chosen or branch exception is documented
 
 ## M2 Architecture
 
 Required before implementation:
 
 - impacted metadata files are listed
+- current branch is confirmed
 - dependencies are mapped
 - permission impact is considered
 - deployment impact is considered
@@ -28,6 +30,7 @@ Required before implementation:
 Required before validation:
 
 - changed files match approved scope
+- changes are on the approved branch
 - no unrelated metadata churn
 - Agentforce references remain consistent
 - Apex, Flow, prompt, and permission changes stay aligned
@@ -46,6 +49,7 @@ Required before release planning:
 Required before deploy, publish, or handoff:
 
 - explicit user approval status is recorded
+- merge target and branch status are documented when release includes merge
 - deploy command is scoped and documented
 - target org assumption is documented
 - rollback path is documented

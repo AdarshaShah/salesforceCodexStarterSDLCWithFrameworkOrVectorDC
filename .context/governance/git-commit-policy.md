@@ -19,6 +19,8 @@ Do not commit in the middle of an incomplete task unless the user asks for an in
 
 Each commit should represent one coherent task or milestone. Avoid mixing unrelated Salesforce metadata changes, context updates, and environment repair unless they are part of the same requested setup task.
 
+Commits for meaningful requirements should be made on a feature or requirement branch. Direct commits to `master` are allowed only for explicit repository setup, documentation-only governance updates, or emergency repair approved by the user.
+
 ## Commit Message
 
 Use concise, imperative messages:
@@ -32,6 +34,8 @@ Fix WeatherService date handling
 ## Push Policy
 
 Commit locally by default. Do not push unless the user explicitly asks.
+
+Do not merge back to `master` unless the user explicitly asks.
 
 ## Exclusions
 

@@ -10,6 +10,7 @@ This is the durable, Git-backed memory for the Salesforce Agentforce project. Ke
 - The project knowledge base is curated Markdown under `.context/knowledge-base/`, not automated RAG.
 - Governance and milestone-review rules live under `.context/governance/`.
 - Git commit policy lives under `.context/governance/git-commit-policy.md`.
+- Branching policy lives under `.context/governance/branching-policy.md`.
 - Current task state lives under `.task/current/`.
 - Do not store secrets, tokens, private keys, or live session details in memory files.
 
@@ -42,6 +43,7 @@ This is the durable, Git-backed memory for the Salesforce Agentforce project. Ke
 - `.context/governance/guardrails.md`
 - `.context/governance/milestone-review.md`
 - `.context/governance/git-commit-policy.md`
+- `.context/governance/branching-policy.md`
 
 ## Known Setup Notes
 
