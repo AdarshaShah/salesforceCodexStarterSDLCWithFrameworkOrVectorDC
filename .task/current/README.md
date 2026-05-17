@@ -10,6 +10,7 @@ Expected files:
 - `implementation-plan.md`
 - `test-plan.md`
 - `review.md`
+- `milestone-review.md`
 - `release-checklist.md`
 
 Keep these files focused on the active task. Move completed task notes elsewhere only when the user asks for history or archival.
