@@ -26,9 +26,10 @@ Before planning:
 1. Read `.context/MEMORY.md`.
 2. Inspect relevant files under `.context/knowledge-base/` for Salesforce and Agentforce guidance that applies to the request.
 3. Inspect `.context/governance/governance.md`, `.context/governance/guardrails.md`, and `.context/governance/milestone-review.md` for governance and approval rules.
-4. Inspect `.context/feedback/improvement-log.md` when prior feedback may affect the current request.
-5. Inspect relevant files under `.context/decisions/`, `.context/patterns/`, `.context/salesforce-org-notes/`, and `.context/completed-tasks/` only when they relate to the current request.
-6. If prior context is unclear or stale, state the uncertainty and verify from source files or Salesforce CLI output.
+4. Inspect `.context/governance/compliance-checklist.md` and `.context/governance/process-exceptions.md` for the required closeout checks and exception rules.
+5. Inspect `.context/feedback/improvement-log.md` when prior feedback may affect the current request.
+6. Inspect relevant files under `.context/decisions/`, `.context/patterns/`, `.context/salesforce-org-notes/`, and `.context/completed-tasks/` only when they relate to the current request.
+7. If prior context is unclear or stale, state the uncertainty and verify from source files or Salesforce CLI output.
 
 After meaningful work:
 
@@ -55,6 +56,9 @@ Use these files first:
 6. `.context/governance/git-commit-policy.md`
 7. `.context/governance/branching-policy.md`
 8. `.context/feedback/feedback-process.md`
+9. `.context/governance/compliance-checklist.md`
+10. `.context/governance/process-exceptions.md`
+11. `.context/knowledge-base/future-scope.md`
 
 Update the knowledge base only with reusable guidance, stable project facts, or verified lessons. Keep task-specific evidence in `.task/current/` and completed task summaries in `.context/completed-tasks/`.
 
@@ -82,6 +86,7 @@ For each meaningful task, create or update:
 .task/current/review.md
 .task/current/milestone-review.md
 .task/current/feedback.md
+.task/current/compliance-checklist.md
 .task/current/release-checklist.md
 ```
 
@@ -97,8 +102,9 @@ Small, low-risk edits may use a compressed version of the workflow, but Codex mu
 6. Run the narrowest relevant verification first, then broader validation when the change risk requires it.
 7. Self-review the exact diff before final response.
 8. Capture feedback status and memory-update decision before final closeout.
-9. Commit every completed file-change task with a clear message after validation and review.
-10. Do not push, deploy, publish, or merge to `master` unless the user explicitly asks.
+9. Complete `.task/current/compliance-checklist.md` before committing.
+10. Commit every completed file-change task with a clear message after validation and review.
+11. Do not push, deploy, publish, or merge to `master` unless the user explicitly asks.
 
 ## Salesforce Validation Defaults
 
@@ -124,5 +130,6 @@ A task is done only when:
 5. A governance review has checked guardrails, approval requirements, milestone status, and residual risk.
 6. Work was completed on an appropriate feature or requirement branch, unless the branch exception is documented.
 7. Feedback status and memory-update decision are recorded.
-8. The completed file-change set is committed to Git.
-9. Release notes include deploy command, target org assumptions, rollback path, and residual risk.
+8. The compliance checklist is complete, or every unchecked item has a documented exception.
+9. The completed file-change set is committed to Git.
+10. Release notes include deploy command, target org assumptions, rollback path, and residual risk.

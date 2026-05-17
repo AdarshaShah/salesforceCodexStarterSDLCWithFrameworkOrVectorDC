@@ -45,12 +45,18 @@ This is the durable, Git-backed memory for the Salesforce Agentforce project. Ke
 - `.context/governance/milestone-review.md`
 - `.context/governance/git-commit-policy.md`
 - `.context/governance/branching-policy.md`
+- `.context/governance/compliance-checklist.md`
+- `.context/governance/process-exceptions.md`
 
 ## Feedback Entry Points
 
 - `.context/feedback/feedback-process.md`
 - `.context/feedback/user-feedback.md`
 - `.context/feedback/improvement-log.md`
+
+## Future Scope Entry Point
+
+- `.context/knowledge-base/future-scope.md`
 
 ## Known Setup Notes
 

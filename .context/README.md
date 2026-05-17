@@ -13,6 +13,7 @@ This folder is the project memory system. It is intentionally Markdown-only and 
 - `governance/`: governance, guardrails, approval, and milestone-review rules.
 - `feedback/`: feedback capture, improvement log, and memory-update process.
 - `retrieved-context.md`: optional scratch context assembled for the current task.
+- `knowledge-base/future-scope.md`: known gaps and future hardening options.
 
 ## Rules
 

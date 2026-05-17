@@ -12,6 +12,7 @@ Expected files:
 - `review.md`
 - `milestone-review.md`
 - `feedback.md`
+- `compliance-checklist.md`
 - `release-checklist.md`
 
 Keep these files focused on the active task. Move completed task notes elsewhere only when the user asks for history or archival.

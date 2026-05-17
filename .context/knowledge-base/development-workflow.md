@@ -15,6 +15,7 @@ Test Engineer writes validation evidence
 Code Reviewer writes review findings
 Governance Reviewer writes milestone and guardrail review
 Feedback Reviewer records task outcome and memory update decision
+Compliance checklist is completed or exceptions are documented
 Release Engineer writes release checklist
 Update .context when durable lessons were learned
 ```
@@ -60,3 +61,15 @@ Before moving between phases, update `.task/current/milestone-review.md`:
 - `M3 Implementation`: changed files, scope adherence, no unrelated metadata churn.
 - `M4 Validation`: tests/checks run, failures, gaps, org validation state.
 - `M5 Release`: deployment readiness, explicit approval status, feedback status, rollback path.
+
+## Closeout Checklist
+
+Before final response for a file-changing task, complete `.task/current/compliance-checklist.md`:
+
+- context and knowledge files checked
+- branch policy followed
+- milestone review updated
+- validation run or limitation documented
+- code review and governance review complete
+- feedback and memory update decision recorded
+- commit created
